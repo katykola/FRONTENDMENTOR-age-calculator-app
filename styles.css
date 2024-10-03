@@ -1,0 +1,196 @@
+:root{
+    --purple: hsl(259, 100%, 65%);
+    --light-red: hsl(0, 100%, 67%);
+    --off-white: hsl(0, 0%, 94%);
+    --light-gray: hsl(0, 0%, 86%);
+    --smoky-gray: hsl(0, 1%, 44%);
+    --off-black: hsl(0, 0%, 8%);
+}
+
+/* - Weights: 400i, 700, 800i */
+
+body{
+    margin: 0;
+    height: 100vh;
+    font-size: 32px;
+    font-family: "Poppins", sans-serif;
+    background-color: var(--off-white);
+}
+
+.calculator{
+    background-color: white;
+    margin: 4rem 1rem;
+    padding: 3rem 1rem;
+    border-radius: 15px 15px 70px 15px;
+}
+
+@media screen and (min-width: 378px){
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .calculator{
+        margin: 0;
+        width: 700px;
+        border-radius: 15px 15px 200px 15px;
+        padding: 3rem;
+    }
+}
+
+.date-fields{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding-bottom: 2rem;
+}
+
+.date-field{
+    max-width: 90px;
+    display: flex;
+    flex-direction: column;
+}
+
+.label-field{
+    display: block;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.label-valid{
+    color: var(--smoky-gray);
+}
+
+.label-invalid{
+    color: var(--light-red);
+}
+
+.field-input{
+    display: block;
+    border-radius: 5px;
+    padding: 1rem;
+    color: var(--off-black);
+    font-weight: 700;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.input-invalid{
+    border: 1px solid var(--light-red);
+}
+
+.input-valid{
+    border: 1px solid var(--light-gray);
+}
+
+/* Odstraní šipky na zvýšení a snížení čísla na boku */
+.field-input::-webkit-inner-spin-button, 
+.field-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+.field-input:focus{
+    outline: none;
+    border: 1px solid var(--purple);
+    cursor: pointer;
+}
+
+.field-input::placeholder{
+    color: var(--off-black);
+}
+
+.invalidMessage{
+    color: var(--light-red);
+    font-size: 14px;
+    margin: 0;
+    font-style: italic;
+}
+
+#dayInvalidMessage,
+#monthInvalidMessage,
+#yearInvalidMessage{
+    display: none;
+}
+
+
+@media screen and (min-width: 378px){
+    .date-fields{
+        display: flex;
+        gap: 30px;
+    }
+    .date-field{
+        max-width: 170px;
+    }
+    .field-input{
+        font-size: 32px;
+    }
+}
+
+.arrow-line{
+    width: 100%;
+    height: 1px;
+    background-color: var(--light-gray);
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.arrow-btn{
+    background-color: var(--purple);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    position: relative;
+    top: -25px;
+}
+
+.arrow-btn:hover{
+    background-color: var(--off-black);
+    cursor: pointer;
+}
+
+.arrow{
+    width: 30px;
+}
+
+@media screen and (min-width: 378px){
+
+    .arrow-btn{
+        margin: 0;
+        width: 90px;
+        height: 90px;
+        top: -45px;
+        left: calc(700px - 90px);
+    }
+}
+
+.outcome-text{
+    color: var(--off-black);
+    font-size: 50px;
+    font-weight: 800;
+    font-style: italic;
+    margin: 0;
+    line-height: 1;
+}
+
+.outcome-text:first-of-type{
+    padding-top: 3rem;
+}
+
+.outcome-number{
+    color: var(--purple);
+}
+
+@media screen and (min-width: 378px){
+    .outcome-text{
+        font-size: 100px;
+    }
+}
